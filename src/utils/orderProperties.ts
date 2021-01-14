@@ -1,14 +1,14 @@
-// interface DataProps {
-//   // general: {
-//   // name: string
-//   // productimage: string
-//   // listprice: string
-//   // }
-//   // features: object
-// }
+interface DataProps {
+  general: {
+    name: string
+    productimage: string
+    listprice: string
+  }
+  features: object
+}
 
-export const orderProperties = (data: any) => {
-  const array: any = []
+export const orderProperties = (data: DataProps[]) => {
+  const array: Array<DataProps> = []
   data.map((el: object) => {
     const properties = Object.entries(el)
       .sort()

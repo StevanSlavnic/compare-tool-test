@@ -1,13 +1,13 @@
-// type DataProps = {
-//   name: string
-//   productimage: string
-//   listprice: string
-// }
+type DataProps = {}
 
-export const productRecreated = (products: any) => {
-  const array: Array<{ product: { general: {}; features: {} } }> = []
+import { subString } from 'utils'
+
+export const productRecreated = (products: DataProps[]) => {
+  const array: Array<DataProps> = []
   products.map((product: any) => {
-    const { name, productimage, listprice, ...features } = product
+    const { name, productimage, listprice, badges, ...data } = product
+
+    const badgesArr = subString(badges)
 
     const objectCopy = Object.assign({
       general: {
@@ -15,7 +15,11 @@ export const productRecreated = (products: any) => {
         productimage,
         listprice
       },
-      features
+
+      features: {
+        badgesArr,
+        data
+      }
     })
 
     array.push(objectCopy)

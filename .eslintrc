@@ -35,7 +35,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }], // Use .prettierrc file as source
-    // "no-console": "warn", // Warn me if console.log is dangling in files
+    // "no-console": "warn",
     // "no-undef": "off", // Turned off no-undef because TS is handle this
     // "no-unused-vars": "off",
     // "@typescript-eslint/no-unused-vars": "error",
@@ -46,7 +46,7 @@
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
-    "no-console": "warn",
+    "no-console": "warn", // Warn me if console.log is dangling in files
     "no-unused-vars": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": [
