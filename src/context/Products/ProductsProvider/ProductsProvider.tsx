@@ -3,24 +3,38 @@ import React, { useEffect, useState } from 'react'
 import { ProductsContext } from 'context/Products/ProductsContext/ProductsContext'
 
 import { fetchProducts } from 'services/fetchProducts'
+// import { orderProperties } from 'utils/orderProperties'
+import { productRecreated } from 'utils/productRecreated'
 
 interface ProductsProviderProps {
   children: React.ReactNode
 }
 
+type IProduct = {}
+
 const ProductsProvider = (props: ProductsProviderProps) => {
   const { children } = props
-  const [products, setProducts] = useState({})
+  const [products, setProducts] = useState<IProduct[]>([])
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       const response = await fetchProducts()
-      setProducts(response)
+
+      setTimeout(() => {
+        const data = response.products
+
+        // const productsO = orderProperties(data)
+
+        const products = productRecreated(data)
+        setProducts(products)
+      }, 800)
     }
     fetchData()
   }, [])
 
-  console.log(products)
+  const hideProduct = (id: string) => {
+    console.log(id)
+  }
 
   return (
     <ProductsContext.Provider
@@ -29,7 +43,8 @@ const ProductsProvider = (props: ProductsProviderProps) => {
           products
         },
         actions: {
-          setProducts
+          setProducts,
+          hideProduct
         }
       }}
     >

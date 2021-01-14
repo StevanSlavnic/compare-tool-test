@@ -1,12 +1,20 @@
 const theme = {
-  fonts: {
-    h1: '36px',
+  fontsSize: {
+    h1: '2.4rem',
     h2: '24px',
     h3: '20px',
     h4: '16px',
     h5: '12px',
     h6: '10px',
-    baseSize: '14px'
+    baseSize: '12px',
+    small: '10px'
+  },
+  fontWeight: {
+    light: '300',
+    regular: '400',
+    semiBold: '600',
+    bold: '700',
+    extraBold: '800'
   },
   screenSize: {
     mobileS: '320px',
@@ -20,7 +28,7 @@ const theme = {
   colors: {
     white: '#FFF',
     black: '#000',
-    mirage: '#151f29',
+    mirage: '#1576c9',
     pastelGreen: '#92D668',
     blackSquezze: '#F2F7FB',
     geyser: '#D1D9DF',

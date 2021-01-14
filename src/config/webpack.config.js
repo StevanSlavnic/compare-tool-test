@@ -1,13 +1,11 @@
 /* eslint-disable prettier/prettier */
-const path = require('path')
+import { resolve as _resolve } from 'path'
 
-module.exports = {
-    resolve: {
-        modules: [path.resolve('./src'), path.resolve('./node_modules')],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-        alias: {
-            ComponentView: path.resolve(__dirname, './src/'),
-            ComponentContainer: path.resolve(__dirname, './src/')
-        }
+export const resolve = {
+    modules: [_resolve('./src'), _resolve('./node_modules')],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    alias: {
+        ComponentView: _resolve(__dirname, './src/'),
+        ComponentContainer: _resolve(__dirname, './src/')
     }
 }
