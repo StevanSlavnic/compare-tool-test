@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ProductsContext } from 'context/Products/ProductsContext/ProductsContext'
 
 import { fetchProducts } from 'services/fetchProducts'
-// import { orderProperties } from 'utils/orderProperties'
-import { productRecreated } from 'utils/productRecreated'
+import { productRecreated, orderProperties } from 'utils'
 
 interface ProductsProviderProps {
   children: React.ReactNode
@@ -23,9 +22,9 @@ const ProductsProvider = (props: ProductsProviderProps) => {
       setTimeout(() => {
         const data = response.products
 
-        // const productsO = orderProperties(data)
+        const productsO = orderProperties(data)
 
-        const products = productRecreated(data)
+        const products = productRecreated(productsO)
         setProducts(products)
       }, 800)
     }
