@@ -9,9 +9,12 @@ interface ProductsProviderProps {
   children: React.ReactNode
 }
 
-type IProduct = {}
+type IProduct = {
+  id: string
+  isHidden: boolean
+}
 
-const ProductsProvider = (props: ProductsProviderProps) => {
+export const ProductsProvider = (props: ProductsProviderProps) => {
   const { children } = props
   const [products, setProducts] = useState<IProduct[]>([])
 
@@ -22,17 +25,26 @@ const ProductsProvider = (props: ProductsProviderProps) => {
       setTimeout(() => {
         const data = response.products
 
-        const productsO = orderProperties(data)
+        const ordered = orderProperties(data)
 
-        const products = productRecreated(productsO)
-        setProducts(products)
+        if (ordered) {
+          const products = productRecreated(ordered)
+
+          setProducts(products)
+        }
       }, 800)
     }
     fetchData()
   }, [])
 
   const hideProduct = (id: string) => {
-    console.log(id)
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === id
+          ? { ...product, isHidden: !product.isHidden }
+          : product
+      )
+    )
   }
 
   return (
@@ -51,5 +63,3 @@ const ProductsProvider = (props: ProductsProviderProps) => {
     </ProductsContext.Provider>
   )
 }
-
-export default ProductsProvider

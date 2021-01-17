@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { HeaderView, FooterView } from 'componentView'
-import { ProductsList, SideBar } from 'componentContainer'
-
 import { withProducts } from 'context/Products/ProductsConsumer'
+import { CompareProvider } from 'context'
+
+import { ProductsSideBar, ProductsList } from 'componentContainer'
+import { HeaderView, FooterView } from 'componentView'
 
 import { LayoutViewWrapper } from './Styled/LayoutViewStyled'
 
@@ -21,7 +22,8 @@ interface LayoutViewProps {
 const LayoutView = (props: LayoutViewProps) => {
   const {
     context: {
-      state: { products }
+      state: { products },
+      actions: { hideProduct }
     }
   } = props
 
@@ -32,11 +34,13 @@ const LayoutView = (props: LayoutViewProps) => {
   return (
     <>
       <HeaderView products={products} />
-      <LayoutViewWrapper>
-        <SideBar {...props} />
+      <CompareProvider products={products}>
+        <LayoutViewWrapper>
+          <ProductsSideBar products={products} hideProduct={hideProduct} />
+          <ProductsList products={products} />
+        </LayoutViewWrapper>
+      </CompareProvider>
 
-        <ProductsList {...props} />
-      </LayoutViewWrapper>
       <FooterView />
     </>
   )

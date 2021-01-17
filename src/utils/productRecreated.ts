@@ -1,29 +1,35 @@
+/* eslint-disable prefer-const */
+// import { subString } from 'utils'
+
 type DataProps = {}
 
-import { subString } from 'utils'
+export const productRecreated = (items: DataProps[]) => {
+  let products: Array<any> = []
+  items.map((item: any) => {
+    const {
+      artikelnummer,
+      // badges,
+      name,
+      productimage,
+      listprice,
+      ...rest
+    } = item
 
-export const productRecreated = (products: DataProps[]) => {
-  const array: Array<DataProps> = []
-  products.map((product: any) => {
-    const { name, productimage, listprice, badges, ...data } = product
-
-    const badgesArr = subString(badges)
-
-    const objectCopy = Object.assign({
+    const product = {
+      id: artikelnummer,
       general: {
         name,
         productimage,
         listprice
       },
+      features: rest,
+      isHidden: false
+    }
 
-      features: {
-        badgesArr,
-        data
-      }
-    })
-
-    array.push(objectCopy)
+    if (product) {
+      products.push(product)
+    }
   })
-  console.log(array)
-  return array
+
+  return products
 }

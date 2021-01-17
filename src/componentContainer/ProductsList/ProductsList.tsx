@@ -1,40 +1,31 @@
 import React from 'react'
 
-import { ProductsListView } from 'componentView/ProductsList/ProductsListView'
-import { ProductView } from 'componentView'
+import { ProductsListView, ProductView } from 'componentView'
+import { FeaturesList } from 'componentContainer'
 
-type Product = {
-  features: {
-    data: {
-      artikelnummer: string
-    }
-  }
-  general: { name: string }
+interface Product {
+  id: string
+  isHidden: boolean
 }
 
-type ProductsListProps = {
-  context: {
-    state: {
-      products: []
-    }
-  }
+interface ProductsListProps {
+  products: Product[]
 }
 
 export const ProductsList = (props: ProductsListProps) => {
-  const {
-    context: {
-      state: { products }
-    }
-  } = props
+  const { products } = props
 
-  const renderProduct = products.map((product: Product) => {
-    const data = product.features.data
-    return <ProductView key={data.artikelnummer} product={product} />
+  const product = products.map((product: Product) => {
+    const { id, isHidden } = product
+
+    return !isHidden ? <ProductView key={id} product={product} /> : ''
   })
 
   return (
     <>
-      <ProductsListView renderProduct={renderProduct} />
+      <ProductsListView product={product}>
+        <FeaturesList />
+      </ProductsListView>
     </>
   )
 }
