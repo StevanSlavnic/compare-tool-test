@@ -1,5 +1,10 @@
 import React from 'react'
+
 import { ProductsSideBarView } from 'componentView'
+
+import { withCompare } from 'context'
+
+import { ProductSideBarLabels } from './Styled/ProductsSideBarStyled'
 
 interface Product {
   id: string
@@ -8,18 +13,28 @@ interface Product {
 }
 
 interface SideBarProps {
+  compareContext: {
+    state: { tableData: any }
+  }
   products: []
+
   hideProduct: (id: string) => void
 }
 
-export const ProductsSideBar = (props: SideBarProps) => {
-  const { products, hideProduct } = props
+const ProductsSideBar = (props: SideBarProps) => {
+  const {
+    compareContext: {
+      state: { tableData }
+    },
+    products,
+    hideProduct
+  } = props
 
   const handleHideProduct = (id: string) => {
     hideProduct(id)
   }
 
-  const renderProductName = products.map((product: Product) => {
+  const selectedProducts = products.map((product: Product) => {
     const { id, general, isHidden } = product
 
     return (
@@ -37,5 +52,20 @@ export const ProductsSideBar = (props: SideBarProps) => {
     )
   })
 
-  return <ProductsSideBarView>{renderProductName}</ProductsSideBarView>
+  const productFeatureLabels = tableData.map((row: any, i: number) => {
+    return (
+      <ProductSideBarLabels key={i} className={!row.isEqual ? 'not-equal' : ''}>
+        <div>{row.name}</div>
+      </ProductSideBarLabels>
+    )
+  })
+
+  return (
+    <ProductsSideBarView
+      selectedProducts={selectedProducts}
+      productFeatureLabels={productFeatureLabels}
+    />
+  )
 }
+
+export default withCompare(ProductsSideBar)

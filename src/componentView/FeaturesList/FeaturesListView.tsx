@@ -3,16 +3,11 @@ import React from 'react'
 import { FeaturesListViewList } from './Styled/FeaturesListViewStyled'
 
 interface FeaturesListViewProps {
-  tableData: any
+  children: JSX.Element[]
 }
 
 export const FeaturesListView = (props: FeaturesListViewProps) => {
-  const { tableData } = props
-  // console.log(featuresData)
+  const { children } = props
 
-  return (
-    <>
-      <FeaturesListViewList>{tableData}</FeaturesListViewList>
-    </>
-  )
+  return <FeaturesListViewList>{children}</FeaturesListViewList>
 }

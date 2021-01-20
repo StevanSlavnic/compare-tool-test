@@ -1,6 +1,6 @@
 /* eslint-disable prefer-const */
-export const orderProperties = (data: any) => {
-  let array: any = []
+export const orderProperties = (data: []) => {
+  let array: string[] = []
   data.map((el: object) => {
     const properties = Object.entries(el)
       .sort()
@@ -15,6 +15,5 @@ export const orderProperties = (data: any) => {
     array.push(obj)
   })
 
-  // console.log(array)
   return array
 }

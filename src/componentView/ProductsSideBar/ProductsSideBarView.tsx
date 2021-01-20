@@ -3,24 +3,28 @@ import React from 'react'
 import {
   ProductsSideBarViewWrapper,
   ProductsSideBarViewHeadline,
-  ProductsSideBarViewProductsList
+  ProductsSideBarViewProductsList,
+  ProductsSideBarViewLables
 } from './Styled/ProductsSideBarViewStyled'
 
-type ProductsSideBarViewProps = {
-  children: JSX.Element[]
+interface ProductsSideBarViewProps {
+  selectedProducts: JSX.Element | JSX.Element[]
+  productFeatureLabels: JSX.Element | JSX.Element[]
 }
 
 export const ProductsSideBarView = (props: ProductsSideBarViewProps) => {
-  const { children } = props
+  const { selectedProducts, productFeatureLabels } = props
 
   return (
     <>
       <ProductsSideBarViewWrapper>
         <ProductsSideBarViewHeadline>Je selectie</ProductsSideBarViewHeadline>
-
         <ProductsSideBarViewProductsList>
-          {children}
+          {selectedProducts}
         </ProductsSideBarViewProductsList>
+        <ProductsSideBarViewLables>
+          {productFeatureLabels}
+        </ProductsSideBarViewLables>
       </ProductsSideBarViewWrapper>
     </>
   )

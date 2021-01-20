@@ -1,19 +1,22 @@
 /* eslint-disable prefer-const */
-// import { subString } from 'utils'
 
-type DataProps = {}
+interface DataProps {}
 
-export const productRecreated = (items: DataProps[]) => {
-  let products: Array<any> = []
-  items.map((item: any) => {
-    const {
-      artikelnummer,
-      // badges,
-      name,
-      productimage,
-      listprice,
-      ...rest
-    } = item
+interface Product {
+  id: string
+  general: {
+    name: string
+    productimage: string
+    listprice: string
+  }
+  features: {}
+  isHidden: Boolean
+}
+
+export const productRecreated = (data: DataProps[]) => {
+  let products: Array<Product> = []
+  data.map((item: any) => {
+    const { artikelnummer, name, productimage, listprice, ...rest } = item
 
     const product = {
       id: artikelnummer,

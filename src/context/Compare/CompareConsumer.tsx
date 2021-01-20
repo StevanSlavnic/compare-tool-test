@@ -5,7 +5,7 @@ export const withCompare = (Component: any) => {
   return function WrapperComponent(props: any) {
     return (
       <CompareContext.Consumer>
-        {(state: any) => <Component {...props} context={state} />}
+        {(state: any) => <Component {...props} compareContext={state} />}
       </CompareContext.Consumer>
     )
   }

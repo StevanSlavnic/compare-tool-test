@@ -1,6 +1,6 @@
 const theme = {
   fontsSize: {
-    h1: '2.4rem',
+    h1: '32px',
     h2: '24px',
     h3: '20px',
     h4: '16px',

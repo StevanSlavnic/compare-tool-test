@@ -1,7 +1,8 @@
-/* eslint-disable prefer-const */
 import React, { useEffect, useState } from 'react'
+
 import { CompareContext } from 'context'
-import { subString } from 'utils'
+
+import { compareProductFeatures, productProperties } from 'utils'
 
 interface CompareProviderProps {
   children: React.ReactNode
@@ -13,62 +14,44 @@ export const CompareProvider = (props: CompareProviderProps) => {
   const [features, setFeatures] = useState({})
 
   useEffect(() => {
-    const recalcFeatures = recalculateCompare()
-    setFeatures(recalcFeatures)
+    const recalculatedFeatures = compareProductFeatures(products)
+    setFeatures(recalculatedFeatures)
   }, [products])
 
-  const recalculateCompare = () => {
-    let values: any = {
-      badges: [],
-      toepassing: [],
-      hardheid: [],
-      kleur: [],
-      temperatuurgebied: [],
-      materiaal: [],
-      snoerdikte: [],
-      inwendigediameter: []
+  const productFeaturesEntries = Object.entries(features)
+
+  const tableData = productFeaturesEntries.map((row: any[]) => {
+    const rowName = () => {
+      for (const key in productProperties) {
+        if (key === row[0]) {
+          return productProperties[key]
+        }
+      }
     }
 
-    const properties = [
-      'badges',
-      'toepassing',
-      'hardheid',
-      'kleur',
-      'temperatuurgebied',
-      'materiaal',
-      'snoerdikte',
-      'inwendigediameter'
-    ]
+    const name = rowName()
+    const label = row[0]
+    const values = row[1]
 
-    products.map((product: any) => {
-      if (!product.isHidden) {
-        properties.forEach((property) => {
-          values[property].push(product.features[property])
-        })
-      }
+    const checkEquality = (value: any) =>
+      value.every((v: any) => v === value[0])
+
+    const isEqual = checkEquality(values)
+
+    const data = row[1].map((feature: string[]) => {
+      return feature
     })
 
-    const { badges, ...rest } = values
-
-    const badgesSubStrig = badges.map((badge: any) => {
-      const result = subString(badge)
-      return result
-    })
-
-    const newValues = { badges: badgesSubStrig, ...rest }
-
-    return newValues
-  }
+    return { name, label, isEqual, data }
+  })
 
   return (
     <CompareContext.Provider
       value={{
         state: {
-          features
+          tableData
         },
-        actions: {
-          setFeatures
-        }
+        actions: {}
       }}
     >
       {children}

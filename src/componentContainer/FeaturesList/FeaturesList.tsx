@@ -1,68 +1,62 @@
-import React from 'react'
+import React from 'react' // useEffect
 
 import { withCompare } from 'context'
-
 import { FeaturesListView } from 'componentView'
 
 import {
   FeaturesListRow,
   FeaturesListRowValues,
-  FeaturesListRowValuesItem
+  FeaturesListRowImages
 } from './Styled/FeaturesListStyled'
 
 interface FeaturesListProps {
-  context: {
+  // productsContext: {
+  //   state: { products: [] }
+  // }
+  compareContext: {
     state: {
-      features: {}
+      tableData: []
+    }
+    actions: {
+      setLabels: (prevLabels: any) => void
     }
   }
 }
 
 const FeaturesList = (props: FeaturesListProps) => {
   const {
-    context: {
-      state: { features }
+    compareContext: {
+      state: { tableData }
     }
   } = props
 
-  const notEgual = (compareArray: string[]) => {
-    return compareArray.every((v: string) => v === compareArray[0])
-  }
+  const badges = (item: any) => (
+    <FeaturesListRowImages>
+      {item.map((badge: string, i: number) => (
+        <img key={i} src={badge} alt={badge} />
+      ))}
+    </FeaturesListRowImages>
+  )
 
-  const tableData = Object.entries(features).map((row: any[], i: number) => {
+  const tableRows = tableData.map((row: any) => {
     return (
-      <FeaturesListRow key={i} className={notEgual(row[1]) ? '' : 'not-equal'}>
-        <FeaturesListRowValues>
-          {row[1].map((feature: string[], i: number) => {
-            const badges = () => {
-              return feature.map((badge: string, i: number) => (
-                <img key={i} src={badge} alt={badge} />
-              ))
-            }
-            if (row[0] === 'badges') {
-              return (
-                <FeaturesListRowValuesItem>
-                  {badges()}
-                </FeaturesListRowValuesItem>
-              )
-            } else {
-              return (
-                <FeaturesListRowValuesItem key={i}>
-                  {feature}
-                </FeaturesListRowValuesItem>
-              )
-            }
-          })}
-        </FeaturesListRowValues>
+      <FeaturesListRow key={row[0]} className={!row.isEqual ? 'not-equal' : ''}>
+        {row.data.map((item: string | any, i: number) => {
+          if (row.label === 'badges') {
+            return badges(item)
+          } else {
+            return (
+              <FeaturesListRowValues key={i}>
+                <div>{item}</div>
+              </FeaturesListRowValues>
+            )
+          }
+        })}
       </FeaturesListRow>
     )
   })
 
-  return (
-    <>
-      <FeaturesListView tableData={tableData}></FeaturesListView>
-    </>
-  )
+  return <FeaturesListView>{tableRows}</FeaturesListView>
 }
 
 export default withCompare(FeaturesList)

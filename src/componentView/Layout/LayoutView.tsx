@@ -9,9 +9,9 @@ import { HeaderView, FooterView } from 'componentView'
 import { LayoutViewWrapper } from './Styled/LayoutViewStyled'
 
 interface LayoutViewProps {
-  context: {
+  productsContext: {
     state: {
-      products: []
+      products: any
     }
     actions: {
       hideProduct: (id: string) => void
@@ -21,14 +21,16 @@ interface LayoutViewProps {
 
 const LayoutView = (props: LayoutViewProps) => {
   const {
-    context: {
+    productsContext: {
       state: { products },
       actions: { hideProduct }
     }
   } = props
 
+  console.log(props)
+
   if (!products.length) {
-    return 'loading'
+    return 'Loading...'
   }
 
   return (
@@ -40,7 +42,6 @@ const LayoutView = (props: LayoutViewProps) => {
           <ProductsList products={products} />
         </LayoutViewWrapper>
       </CompareProvider>
-
       <FooterView />
     </>
   )
