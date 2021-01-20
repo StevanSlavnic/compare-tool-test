@@ -5,7 +5,7 @@ export const withProducts = (Component: any) => {
   return function WrapperComponent(props: any) {
     return (
       <ProductsContext.Consumer>
-        {(state: any) => <Component {...props} context={state} />}
+        {(state: any) => <Component {...props} productsContext={state} />}
       </ProductsContext.Consumer>
     )
   }

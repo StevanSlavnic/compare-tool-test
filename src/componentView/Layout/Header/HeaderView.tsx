@@ -12,7 +12,7 @@ export const HeaderView = (props: HeaderViewProps) => {
   return (
     <>
       <HeaderViewWrapper>
-        {products && products.length} producten vergelijken
+        <div>{products.length} producten vergelijken</div>
       </HeaderViewWrapper>
     </>
   )

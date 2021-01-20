@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import './App.css'
+import './App.scss'
 import theme from 'theme/theme'
 
 import { ProductsProvider } from 'context'

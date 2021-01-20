@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const LayoutViewWrapper = styled.div`
-  display: inline-flex;
+  display: flex;
   height: 100%;
 `
 

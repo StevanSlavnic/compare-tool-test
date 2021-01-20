@@ -6,7 +6,6 @@ import { ProductsListView } from 'componentView/ProductsList/ProductsListView'
 import { ProductView } from 'componentView/Product/ProductView'
 import { FeaturesListView } from 'componentView/FeaturesList/FeaturesListView'
 import { FooterView } from 'componentView/Layout/Footer/FooterView'
-import { ProductFeaturesView } from './ProductFeatures/ProductFeaturesView'
 
 export {
   LayoutView,
@@ -15,6 +14,5 @@ export {
   ProductsListView,
   ProductView,
   FeaturesListView,
-  FooterView,
-  ProductFeaturesView
+  FooterView
 }

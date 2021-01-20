@@ -1,5 +1,11 @@
 import { orderProperties } from './orderProperties'
 import { productRecreated } from './productRecreated'
-import { subString } from './subString'
+import { compareProductFeatures } from './compareProductFeatures'
+import { productProperties } from './productProperties'
 
-export { orderProperties, productRecreated, subString }
+export {
+  orderProperties,
+  productRecreated,
+  compareProductFeatures,
+  productProperties
+}

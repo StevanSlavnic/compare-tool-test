@@ -8,4 +8,5 @@ export const ProductsListViewWrapper = styled.div`
 
 export const ProductsListViewProducts = styled.div`
   display: flex;
+  height: 312px;
 `

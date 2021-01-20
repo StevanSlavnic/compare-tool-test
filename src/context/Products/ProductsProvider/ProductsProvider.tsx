@@ -9,14 +9,14 @@ interface ProductsProviderProps {
   children: React.ReactNode
 }
 
-type IProduct = {
+interface Product {
   id: string
-  isHidden: boolean
+  isHidden: Boolean
 }
 
 export const ProductsProvider = (props: ProductsProviderProps) => {
   const { children } = props
-  const [products, setProducts] = useState<IProduct[]>([])
+  const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
     const fetchData = async () => {

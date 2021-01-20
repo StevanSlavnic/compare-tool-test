@@ -1,18 +1,37 @@
 import React from 'react'
 
-import { ProductViewGeneral } from './Styled/ProductViewStyled'
+import {
+  ProductViewGeneralImage,
+  ProductViewGeneral,
+  ProductViewGeneralName,
+  ProductViewGeneralPrice
+} from './Styled/ProductViewStyled'
 
-export const ProductView = (props: any) => {
+interface ProductViewProps {
+  product: {
+    general: {
+      productimage: string
+      name: string
+      listprice: string
+    }
+  }
+}
+
+export const ProductView = (props: ProductViewProps) => {
   const {
     product: { general }
   } = props
 
   return (
     <ProductViewGeneral>
-      <img src={general.productimage} alt={general.name} />
+      <ProductViewGeneralImage>
+        <img src={general.productimage} alt={general.name} />
+      </ProductViewGeneralImage>
 
-      <div>{general.name}</div>
-      <div>{general.listprice} per stuk / excl. btw</div>
+      <ProductViewGeneralName>{general.name}</ProductViewGeneralName>
+      <ProductViewGeneralPrice>
+        {general.listprice} <div>per stuk / excl. btw</div>
+      </ProductViewGeneralPrice>
     </ProductViewGeneral>
   )
 }

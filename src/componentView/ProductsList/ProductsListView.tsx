@@ -5,7 +5,12 @@ import {
   ProductsListViewProducts
 } from './Styled/ProductsListViewStyles'
 
-export const ProductsListView = (props: any) => {
+interface ProductsListViewProps {
+  product: {}
+  children: JSX.Element
+}
+
+export const ProductsListView = (props: ProductsListViewProps) => {
   const { product, children } = props
 
   return (

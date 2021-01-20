@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { FooterWrapper } from './Styled/FooterViewStyled'
+
 export const FooterView = () => {
   return (
     <>
-      <div>Footer</div>
+      <FooterWrapper></FooterWrapper>
     </>
   )
 }

@@ -5,6 +5,11 @@ import { FeaturesList } from 'componentContainer'
 
 interface Product {
   id: string
+  general: {
+    productimage: string
+    name: string
+    listprice: string
+  }
   isHidden: boolean
 }
 
