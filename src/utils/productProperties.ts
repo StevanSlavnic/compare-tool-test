@@ -1,4 +1,4 @@
-export const productProperties: any = {
+export const productProperties: { [property: string]: string } = {
   badges: 'Keurmerk',
   toepassing: 'Toepassing',
   hardheid: 'Hardening',
