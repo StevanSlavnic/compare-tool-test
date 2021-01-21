@@ -2,7 +2,7 @@
 
 interface DataProps {}
 
-interface Product {
+interface Products {
   id: string
   general: {
     name: string
@@ -14,7 +14,7 @@ interface Product {
 }
 
 export const productRecreated = (data: DataProps[]) => {
-  let products: Array<Product> = []
+  let products: Array<Products> = []
   data.map((item: any) => {
     const { artikelnummer, name, productimage, listprice, ...rest } = item
 

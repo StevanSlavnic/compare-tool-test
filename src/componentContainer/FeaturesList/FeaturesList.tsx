@@ -10,27 +10,21 @@ import {
 } from './Styled/FeaturesListStyled'
 
 interface FeaturesListProps {
-  // productsContext: {
-  //   state: { products: [] }
-  // }
   compareContext: {
     state: {
       tableData: []
     }
     actions: {
-      setLabels: (prevLabels: any) => void
+      setLabels: (prevLabels: []) => void
     }
   }
 }
 
 const FeaturesList = (props: FeaturesListProps) => {
-  const {
-    compareContext: {
-      state: { tableData }
-    }
-  } = props
+  const { tableData } = props.compareContext.state
 
-  const badges = (item: any) => (
+  /* Iterate over array of badges and return images */
+  const badges = (item: []) => (
     <FeaturesListRowImages>
       {item.map((badge: string, i: number) => (
         <img key={i} src={badge} alt={badge} />
@@ -38,9 +32,10 @@ const FeaturesList = (props: FeaturesListProps) => {
     </FeaturesListRowImages>
   )
 
-  const tableRows = tableData.map((row: any) => {
+  /* tableRows function is repsosible for iterating over tableData that is provided by Compare Context */
+  const tableRows = tableData.map((row: any, i: number) => {
     return (
-      <FeaturesListRow key={row[0]} className={!row.isEqual ? 'not-equal' : ''}>
+      <FeaturesListRow key={i} className={!row.isEqual ? 'not-equal' : ''}>
         {row.data.map((item: string | any, i: number) => {
           if (row.label === 'badges') {
             return badges(item)

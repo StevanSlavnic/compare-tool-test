@@ -11,7 +11,7 @@ import { LayoutViewWrapper } from './Styled/LayoutViewStyled'
 interface LayoutViewProps {
   productsContext: {
     state: {
-      products: any
+      products: []
     }
     actions: {
       hideProduct: (id: string) => void
@@ -26,8 +26,6 @@ const LayoutView = (props: LayoutViewProps) => {
       actions: { hideProduct }
     }
   } = props
-
-  console.log(props)
 
   if (!products.length) {
     return 'Loading...'

@@ -16,7 +16,7 @@ interface SideBarProps {
   compareContext: {
     state: { tableData: any }
   }
-  products: []
+  products: Product[]
 
   hideProduct: (id: string) => void
 }
