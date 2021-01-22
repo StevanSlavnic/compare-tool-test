@@ -35,12 +35,12 @@ const FeaturesList = (props: FeaturesListProps) => {
   )
 
   /* tableRows function is repsosible for iterating over tableData that is provided by Compare Context */
-  const tableRows = tableData.map((row: any, i: number) => {
+  const tableRows = tableData.map((row: any, a: number) => {
     return (
-      <FeaturesListRow key={i} className={!row.isEqual ? 'not-equal' : ''}>
+      <FeaturesListRow key={a} className={!row.isEqual ? 'not-equal' : ''}>
         {row.data.map((item: string | any, i: number) => {
           if (row.label === 'badges') {
-            return badges(item)
+            return <React.Fragment key={i}>{badges(item)}</React.Fragment>
           } else {
             return (
               <FeaturesListRowValues key={i}>

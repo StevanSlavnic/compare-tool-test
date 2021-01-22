@@ -12,14 +12,14 @@ export const FeaturesListRow = styled.div`
 `
 
 export const FeaturesListRowLabel = styled.div`
-  flex: 0 0 200px;
+  // width: 200px;
 `
 
 export const FeaturesListRowValues = styled.div`
   height: 30px;
   display: flex;
   align-items: center;
-  flex: 0 0 200px;
+  width: 200px;
   padding: 0 10px;
 `
 
@@ -27,7 +27,7 @@ export const FeaturesListRowImages = styled.div`
   height: 30px;
   display: flex;
   align-items: center;
-  flex: 0 0 200px;
+  width: 200px;
   padding: 0 10px;
 
   img {
@@ -38,5 +38,5 @@ export const FeaturesListRowImages = styled.div`
 `
 
 export const FeaturesListRowValuesItem = styled.div`
-  flex: 0 0 200px;
+  width: 200px;
 `

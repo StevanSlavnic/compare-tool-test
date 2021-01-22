@@ -1,5 +1,7 @@
-export const subString = (str: string) => {
-  const string = str.split('|')
+/* helper function that extracts a substring from a string with certain delimiter */
 
-  return string
+export const subString = (strData: string, delimiter: string) => {
+  const result = strData.split(delimiter)
+
+  return result
 }

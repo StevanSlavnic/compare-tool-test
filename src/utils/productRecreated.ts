@@ -13,6 +13,7 @@ interface Products {
   isHidden: Boolean
 }
 
+/* Function iterate over objects and creates new order of object properties */
 export const productRecreated = (data: DataProps[]) => {
   let products: Array<Products> = []
   data.map((item: any) => {

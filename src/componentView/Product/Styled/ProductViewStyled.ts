@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ProductViewGeneral = styled.div`
-  flex: 0 0 200px;
+  width: 200px;
   padding: 10px;
 `
 

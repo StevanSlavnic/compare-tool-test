@@ -3,9 +3,8 @@ import { devices } from 'helpers'
 
 export const ProductsSideBarViewWrapper = styled.div`
   border-right: 1px solid ${(props) => props.theme.colors.geyser};
-  flex: 0 0 165px;
-
-  @media ${devices.mobileS} {
+  flex: 0 0 130px;
+  @media ${devices.mobileL} {
     flex: 0 0 200px;
   }
 
@@ -23,7 +22,7 @@ export const ProductsSideBarViewWrapper = styled.div`
 
 export const ProductsSideBarViewHeadline = styled.div`
   color: ${(props) => props.theme.colors.mirage};
-  font-size: ${(props) => props.theme.fontsSize.h2};
+  font-size: ${(props) => props.theme.fontsSize.h4};
   font-weight: ${(props) => props.theme.fontWeight.semiBold};
 
   @media ${devices.mobileS} {
@@ -33,7 +32,7 @@ export const ProductsSideBarViewHeadline = styled.div`
 
 export const ProductsSideBarViewProductsList = styled.div`
   padding: 0 20px;
-  height: 265px;
+  height: 274px;
   overflow: auto;
 `
 
