@@ -23,6 +23,8 @@ interface FeaturesListProps {
 const FeaturesList = (props: FeaturesListProps) => {
   const { tableData } = props.compareContext.state
 
+  console.log(tableData)
+
   /* Iterate over array of badges and return images */
   const badges = (item: []) => (
     <FeaturesListRowImages>

@@ -3,7 +3,7 @@ import React from 'react'
 import { HeaderViewWrapper } from './Styled/HeaderViewStyled'
 
 interface HeaderViewProps {
-  products: []
+  products: object[]
 }
 
 export const HeaderView = (props: HeaderViewProps) => {

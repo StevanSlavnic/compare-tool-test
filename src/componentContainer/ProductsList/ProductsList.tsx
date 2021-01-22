@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ProductsListView, ProductView } from 'componentView'
 import { FeaturesList } from 'componentContainer'
+import { withProducts } from 'context'
 
 interface Product {
   id: string
@@ -14,11 +15,19 @@ interface Product {
 }
 
 interface ProductsListProps {
-  products: Product[]
+  productsContext: {
+    state: {
+      products: Product[]
+    }
+  }
 }
 
-export const ProductsList = (props: ProductsListProps) => {
-  const { products } = props
+const ProductsList = (props: ProductsListProps) => {
+  const {
+    productsContext: {
+      state: { products }
+    }
+  } = props
 
   const product = products.map((product: Product) => {
     const { id, isHidden } = product
@@ -34,3 +43,5 @@ export const ProductsList = (props: ProductsListProps) => {
     </>
   )
 }
+
+export default withProducts(ProductsList)
