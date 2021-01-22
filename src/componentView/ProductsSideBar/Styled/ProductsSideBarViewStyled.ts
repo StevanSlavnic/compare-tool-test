@@ -4,6 +4,7 @@ import { devices } from 'helpers'
 export const ProductsSideBarViewWrapper = styled.div`
   border-right: 1px solid ${(props) => props.theme.colors.geyser};
   flex: 0 0 130px;
+
   @media ${devices.mobileL} {
     flex: 0 0 200px;
   }

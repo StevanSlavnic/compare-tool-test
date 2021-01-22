@@ -4,7 +4,7 @@ export const productProperties: { [property: string]: string } = {
   inwendigediameter: 'Inwendige diameter (mm)',
   kleur: 'Kleur',
   materiaal: 'Materiaal',
-  temperatuurgebied: 'Temperatuurgebied',
   snoerdikte: 'Snoerdikte (mm)',
+  temperatuurgebied: 'Temperatuurgebied',
   toepassing: 'Toepassing'
 }

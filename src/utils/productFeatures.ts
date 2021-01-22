@@ -12,8 +12,8 @@ export const productFeatures = (products: []) => {
     inwendigediameter: [],
     kleur: [],
     materiaal: [],
-    temperatuurgebied: [],
     snoerdikte: [],
+    temperatuurgebied: [],
     toepassing: []
   }
 

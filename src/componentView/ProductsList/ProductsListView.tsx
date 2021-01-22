@@ -16,7 +16,7 @@ export const ProductsListView = (props: ProductsListViewProps) => {
   return (
     <ProductsListViewWrapper>
       <ProductsListViewProducts>{product}</ProductsListViewProducts>
-      <div>{children}</div>
+      {children}
     </ProductsListViewWrapper>
   )
 }

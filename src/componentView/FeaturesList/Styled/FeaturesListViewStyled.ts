@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const FeaturesListViewList = styled.div`
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+
   > * {
     border-bottom: 1px solid ${(props) => props.theme.colors.geyser};
     &:first-child {

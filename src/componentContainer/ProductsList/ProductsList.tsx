@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ProductsListView, ProductView } from 'componentView'
 import { FeaturesList } from 'componentContainer'
+import { withProducts } from 'context'
 
 interface Product {
   id: string
@@ -14,12 +15,19 @@ interface Product {
 }
 
 interface ProductsListProps {
-  products: Product[]
+  productsContext: {
+    state: {
+      products: Product[]
+    }
+  }
 }
 
-/* ProductsList Component is resposible for showing the list of products */
-export const ProductsList = (props: ProductsListProps) => {
-  const { products } = props
+const ProductsList = (props: ProductsListProps) => {
+  const {
+    productsContext: {
+      state: { products }
+    }
+  } = props
 
   /* Iterate over products and return products that are not hidden */
   const product = products.map((product: Product) => {
@@ -36,3 +44,5 @@ export const ProductsList = (props: ProductsListProps) => {
     </>
   )
 }
+
+export default withProducts(ProductsList)
