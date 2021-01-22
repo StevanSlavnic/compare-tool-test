@@ -17,9 +17,11 @@ interface ProductsListProps {
   products: Product[]
 }
 
+/* ProductsList Component is resposible for showing the list of products */
 export const ProductsList = (props: ProductsListProps) => {
   const { products } = props
 
+  /* Iterate over products and return products that are not hidden */
   const product = products.map((product: Product) => {
     const { id, isHidden } = product
 

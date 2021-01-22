@@ -21,6 +21,7 @@ interface SideBarProps {
   hideProduct: (id: string) => void
 }
 
+/* ProductsSideBar Component is showing checkboxes for hide/show products in sidebar list and showing labels of product features */
 const ProductsSideBar = (props: SideBarProps) => {
   const {
     compareContext: {
@@ -30,10 +31,12 @@ const ProductsSideBar = (props: SideBarProps) => {
     hideProduct
   } = props
 
+  /* Show/hide product by passing id to hideProduct function in products context */
   const handleHideProduct = (id: string) => {
     hideProduct(id)
   }
 
+  /* Iterating over products for showing theit names in checkbox input labels */
   const selectedProducts = products.map((product: Product) => {
     const { id, general, isHidden } = product
 
@@ -52,6 +55,7 @@ const ProductsSideBar = (props: SideBarProps) => {
     )
   })
 
+  /* Iterating over tableData prop from Compare context and get product feature label */
   const productFeatureLabels = tableData.map((row: any, i: number) => {
     return (
       <ProductSideBarLabels key={i} className={!row.isEqual ? 'not-equal' : ''}>

@@ -20,10 +20,12 @@ interface FeaturesListProps {
   }
 }
 
+/* Feaures list component is resposible for showing tableData props received from Compare Context */
+
 const FeaturesList = (props: FeaturesListProps) => {
   const { tableData } = props.compareContext.state
 
-  /* Iterate over array of badges and return images */
+  /* Iterate over array of badges and return images of singe badge */
   const badges = (item: []) => (
     <FeaturesListRowImages>
       {item.map((badge: string, i: number) => (
