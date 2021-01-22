@@ -1,10 +1,10 @@
 export const productProperties: { [property: string]: string } = {
   badges: 'Keurmerk',
-  toepassing: 'Toepassing',
   hardheid: 'Hardening',
+  inwendigediameter: 'Inwendige diameter (mm)',
   kleur: 'Kleur',
-  temperatuurgebied: 'Temperatuurgebied',
   materiaal: 'Materiaal',
   snoerdikte: 'Snoerdikte (mm)',
-  inwendigediameter: 'Inwendige diameter (mm)'
+  temperatuurgebied: 'Temperatuurgebied',
+  toepassing: 'Toepassing'
 }

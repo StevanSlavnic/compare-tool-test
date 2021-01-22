@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { CompareContext } from 'context'
 
-import { compareProductFeatures, productProperties } from 'utils'
+import { productFeatures, productProperties } from 'utils'
 
 interface CompareProviderProps {
   children: React.ReactNode
@@ -14,7 +14,7 @@ export const CompareProvider = (props: CompareProviderProps) => {
   const [features, setFeatures] = useState({})
 
   useEffect(() => {
-    const recalculatedFeatures = compareProductFeatures(products)
+    const recalculatedFeatures = productFeatures(products)
     setFeatures(recalculatedFeatures)
   }, [products])
 

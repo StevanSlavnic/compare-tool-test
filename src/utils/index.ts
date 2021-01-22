@@ -1,11 +1,6 @@
 import { orderProperties } from './orderProperties'
 import { productRecreated } from './productRecreated'
-import { compareProductFeatures } from './compareProductFeatures'
+import { productFeatures } from './productFeatures'
 import { productProperties } from './productProperties'
 
-export {
-  orderProperties,
-  productRecreated,
-  compareProductFeatures,
-  productProperties
-}
+export { orderProperties, productRecreated, productFeatures, productProperties }

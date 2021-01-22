@@ -29,6 +29,7 @@ const ProductsList = (props: ProductsListProps) => {
     }
   } = props
 
+  /* Iterate over products and return products that are not hidden */
   const product = products.map((product: Product) => {
     const { id, isHidden } = product
 

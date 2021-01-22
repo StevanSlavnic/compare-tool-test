@@ -1,4 +1,8 @@
 /* eslint-disable prefer-const */
+
+/* Function that transforms object properties to lowercase, removes _ from 
+property name and empty spaces
+*/
 export const orderProperties = (data: []) => {
   let array: string[] = []
   data.map((el: object) => {

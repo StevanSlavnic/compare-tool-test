@@ -2,16 +2,19 @@
 import { subString } from 'helpers'
 import { productProperties } from 'utils'
 
-export const compareProductFeatures = (products: []) => {
+/* Function that matches valuest of product features and sets them by
+matching properties.
+*/
+export const productFeatures = (products: []) => {
   let tableValues: { [property: string]: string[] } = {
     badges: [],
-    toepassing: [],
     hardheid: [],
+    inwendigediameter: [],
     kleur: [],
-    temperatuurgebied: [],
     materiaal: [],
     snoerdikte: [],
-    inwendigediameter: []
+    temperatuurgebied: [],
+    toepassing: []
   }
 
   products.map(
@@ -30,7 +33,7 @@ export const compareProductFeatures = (products: []) => {
   const { badges, ...rest } = tableValues
 
   const badgesSubStrig = badges.map((badge: string) => {
-    const result = subString(badge)
+    const result = subString(badge, '|')
     return result
   })
 

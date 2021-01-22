@@ -1,5 +1,7 @@
 import theme from 'theme/theme'
 
+/* Predefined device media width */
+
 export const devices = {
   mobileS: `(min-width: ${theme.screenSize.mobileS})`,
   mobileM: `(min-width: ${theme.screenSize.mobileM})`,
