@@ -37,7 +37,7 @@ const LayoutView = (props: LayoutViewProps) => {
       <CompareProvider products={products}>
         <LayoutViewWrapper>
           <ProductsSideBar products={products} hideProduct={hideProduct} />
-          <ProductsList products={products} />
+          <ProductsList />
         </LayoutViewWrapper>
       </CompareProvider>
       <FooterView />

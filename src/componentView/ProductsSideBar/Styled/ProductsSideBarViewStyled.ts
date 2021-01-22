@@ -3,10 +3,11 @@ import { devices } from 'helpers'
 
 export const ProductsSideBarViewWrapper = styled.div`
   border-right: 1px solid ${(props) => props.theme.colors.geyser};
-  flex: 0 0 165px;
+  flex-shrink: 0;
+  width: 165px;
 
   @media ${devices.mobileS} {
-    flex: 0 0 200px;
+    width: 200px;
   }
 
   .product-list {
