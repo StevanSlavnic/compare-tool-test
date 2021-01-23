@@ -51,15 +51,15 @@ Container Components are located in **/src/componentContainer** folder with the 
 
 View components are located in **/src/componentView** folder with the following structure:
 
-- FeaturesList - This componenent is accepting children props from /src/componentContainer and render data.
+- FeaturesList - This componenent is accepting children props from FeaturesList container components and render data.
 - Layout - Component is a wrapper componet that holds layout of app and accept props from Products Context. Folder of this component holds:
   - Header - Component that accepts props from Layout for showing number of fetched products from API.
   - Footer - Statical component with no props passed.
-- Product - Component that accept props from ProductsList component and its resposible for showing single producgeneral information.
+- Product - Component that accept props from ProductsList container component and its resposible for showing single producgeneral information.
 - ProductList - Handles the view of ProductList container component and accept props.
 - ProductsSideBar - Handles the view of ProductsSideBar container component - list of checkboxes and product feature labels.
 
-All View components have Styled folder where styles of certain component.
+All View components have Styled folder where styles of certain styled component are defined.
 
 ## Context - State managment
 
@@ -104,7 +104,7 @@ Module **theme.ts** located in **/src/theme** holds application-level styles. It
 
 All the utility methods that can be shared across our entire project are located **/src/utils** .
 
-- compareProductFeatures - method that compares the product features
+- compareProductFeatures.ts - method that compares the product features
 - orderProperties.ts - Function that transforms object properties to lowercase, removes \_ (lowdash) from
   property name and empty spaces.
 - productPoperties.ts - constant that holds predefined object properties.
