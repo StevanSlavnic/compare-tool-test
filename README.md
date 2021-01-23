@@ -63,7 +63,7 @@ All View components have Styled folder where styles of certain component.
 
 ## Context - State managment
 
-Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the DOM tree.
+React Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the DOM tree.
 
 Contexts are located in **/src/context** folder. For purpose of this app there are two contexts: the - Compare context located in **/src/context/Compare** and consists out of:
 
