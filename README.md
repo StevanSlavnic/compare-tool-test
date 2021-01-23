@@ -1,5 +1,8 @@
 Hello. This is short documentation on Compare Products App.
 
+**Notice:**
+The table for comparison of features doesn't include 3 features - Compound, International Maatadiding, Seal volgens-norm because API is not returning them in product object. I have prepared the list of features based on the delivered mockup and email correspondence that we had where your colleague informed me that the list should be prepared as it is presented in the mockup of this test task (of course, I have omitted duplicated labels of features and presented features from the mockup that are available on the API). 
+
 Purpose - This document provides an architectural overview of the app. It is intended to capture and convey the significant architectural decisions which have been made on the app.
 
 Scope - This subject provides an architectural overview of the Compare Products App. Compare Products App is being developed by Stevan Slavnic with purpose to demonstrates experience building SPA by using React.
@@ -10,7 +13,17 @@ Scope - This subject provides an architectural overview of the Compare Products 
 - All the components are registered and exported from index.ts file for a single access point.
 - Styling of app is done by using Styled Components.
 - Type checking is done by using TypeScript.
+- Statically analysis of code is done by Eslint in combination Prettier.
 - Since app is created using create-react-app I haven't included Webpack in my project. For accessing Webpack configuration app could be ejected by runnuing yarn eject command.
+- App is compatible with all modern browsers, even with IE11.
+
+## How to start app? 
+
+- Make sure that you have stable Node.js and npm versions installed.
+- Open terminal and clone this repo and add project name using following command: git clone https://github.com/StevanSlavnic/stevan-slavnic-eriks-digital-frontend-challenge.git
+- Move to the project directory: cd stevan-slavnic-eriks-digital-frontend-challenge.
+- Run **yarn install** in order to install dependencies.
+- After dependencies are installed, run **yarn start** in terminal. App should run at http://localhost:3000.
 
 ## Container components
 
@@ -24,7 +37,8 @@ Scope - This subject provides an architectural overview of the Compare Products 
 Container Components are located in **/src/componentContainer** folder with the following structure, all the components are registered and exported from index.ts file for a single access point:
 
 - FeaturesList - This component is resposible for showing tableData props received from Compare Context.
-- ProductsList - Component is resposible for showing the list of products, based on product isHidden status.
+
+- ProductsList - Component is resposible for showing the list of products received from Products Context.
 - ProductsSideBar - Component is showing checkboxes for hide/show products in sidebar list and showing labels of product features.
 
 ## View components
