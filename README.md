@@ -7,6 +7,14 @@ Purpose - This document provides an architectural overview of the app. It is int
 
 Scope - This subject provides an architectural overview of the Compare Products App. Compare Products App is being developed by Stevan Slavnic with purpose to demonstrates experience building SPA by using React.
 
+# How to start app? 
+
+- Make sure that you have stable Node.js and npm versions installed.
+- Open terminal and clone this repo using following command: git clone https://github.com/StevanSlavnic/stevan-slavnic-eriks-digital-frontend-challenge.git
+- Move to the project directory: cd stevan-slavnic-eriks-digital-frontend-challenge.
+- Run **yarn install** in order to install dependencies.
+- After dependencies are installed, run **yarn start** in terminal. App should run at http://localhost:3000.
+
 # App overview:
 
 - App is created by using Container - View pattern.
@@ -16,14 +24,6 @@ Scope - This subject provides an architectural overview of the Compare Products 
 - Statically analysis of code is done by Eslint in combination Prettier.
 - Since app is created using create-react-app I haven't included Webpack in my project. For accessing Webpack configuration app could be ejected by runnuing yarn eject command.
 - App is compatible with all modern browsers, even with IE11.
-
-## How to start app? 
-
-- Make sure that you have stable Node.js and npm versions installed.
-- Open terminal and clone this repo using following command: git clone https://github.com/StevanSlavnic/stevan-slavnic-eriks-digital-frontend-challenge.git
-- Move to the project directory: cd stevan-slavnic-eriks-digital-frontend-challenge.
-- Run **yarn install** in order to install dependencies.
-- After dependencies are installed, run **yarn start** in terminal. App should run at http://localhost:3000.
 
 ## Container components
 
