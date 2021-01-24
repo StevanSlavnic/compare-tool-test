@@ -49,9 +49,9 @@ export const CompareProvider = (props: CompareProviderProps) => {
     <CompareContext.Provider
       value={{
         state: {
-          tableData,
+          tableData
         },
-        actions: {},
+        actions: {}
       }}
     >
       {children}

@@ -6,7 +6,7 @@ import { FeaturesListView } from 'componentView'
 import {
   FeaturesListRow,
   FeaturesListRowValues,
-  FeaturesListRowImages,
+  FeaturesListRowImages
 } from './Styled/FeaturesListStyled'
 
 interface FeaturesListProps {
@@ -52,7 +52,7 @@ const FeaturesList = (props: FeaturesListProps) => {
           })}
         </FeaturesListRow>
       )
-    },
+    }
   )
 
   return <FeaturesListView>{tableRows}</FeaturesListView>

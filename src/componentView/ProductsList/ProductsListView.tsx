@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   ProductsListViewWrapper,
-  ProductsListViewProducts,
+  ProductsListViewProducts
 } from './Styled/ProductsListViewStyles'
 
 interface ProductsListViewProps {

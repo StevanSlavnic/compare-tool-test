@@ -13,8 +13,8 @@ module.exports = {
       helpers: path.resolve(__dirname, './src/helpers'),
       services: path.resolve(__dirname, './src/services'),
       theme: path.resolve(__dirname, './src/theme'),
-      utils: path.resolve(__dirname, './src/utils'),
-    },
+      utils: path.resolve(__dirname, './src/utils')
+    }
   },
   module: {
     rules: [
@@ -25,19 +25,23 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader?url=false', 'sass-loader'],
+        use: ['style-loader', 'css-loader?url=false', 'sass-loader']
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
-    ],
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      }
+    ]
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -46,17 +50,17 @@ module.exports = {
     compress: true,
     hot: true,
     port: 3000,
-    publicPath: '/',
+    publicPath: '/'
   },
   devtool: 'source-map',
   output: {
     filename: '[name].bundle.js',
     publicPath: '/',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build')
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
-    }),
-  ],
+      template: path.join(__dirname, 'index.html')
+    })
+  ]
 }

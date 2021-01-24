@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProductsContext } from 'context/Products/ProductsContext/ProductsContext'
 
-export const withProducts = (Component: any) => {
+export const withProducts = (Component: React.FunctionComponent) => {
   return function WrapperComponent(props: any) {
     return (
       <ProductsContext.Consumer>
