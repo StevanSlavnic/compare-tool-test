@@ -21,7 +21,6 @@ interface FeaturesListProps {
 }
 
 /* Feaures list component is resposible for showing tableData props received from Compare Context */
-
 const FeaturesList = (props: FeaturesListProps) => {
   const { tableData } = props.compareContext.state
 

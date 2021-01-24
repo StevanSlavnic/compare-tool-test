@@ -6,7 +6,7 @@ import {
 } from './Styled/ProductsListViewStyles'
 
 interface ProductsListViewProps {
-  product: any
+  product: React.ReactNode
   children: JSX.Element
 }
 

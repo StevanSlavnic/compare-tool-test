@@ -9,7 +9,7 @@ import {
   ProductViewGeneralPrice
 } from './Styled/ProductViewStyled'
 
-import DeleteIcon from '../../assets/delete-icon.svg'
+import { DeleteIcon } from 'assets/icons'
 
 interface ProductViewProps {
   product: {

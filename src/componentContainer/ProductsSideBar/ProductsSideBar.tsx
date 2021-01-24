@@ -14,7 +14,7 @@ interface Product {
 
 interface SideBarProps {
   compareContext: {
-    state: { tableData: any }
+    state: { tableData: [] }
   }
   products: Product[]
 

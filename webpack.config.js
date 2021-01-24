@@ -13,7 +13,8 @@ module.exports = {
       helpers: path.resolve(__dirname, './src/helpers'),
       services: path.resolve(__dirname, './src/services'),
       theme: path.resolve(__dirname, './src/theme'),
-      utils: path.resolve(__dirname, './src/utils')
+      utils: path.resolve(__dirname, './src/utils'),
+      assets: path.resolve(__dirname, './src/assets')
     }
   },
   module: {
@@ -57,6 +58,25 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: '/',
     path: path.resolve(__dirname, 'build')
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1]
+            return `npm.${packageName.replace('@', '')}`
+          }
+        }
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

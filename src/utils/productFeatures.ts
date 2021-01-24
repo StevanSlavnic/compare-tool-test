@@ -19,7 +19,7 @@ export const productFeatures = (products: []) => {
 
   products.map(
     (product: {
-      isHidden: Boolean
+      isHidden: boolean
       features: { [property: string]: string }
     }) => {
       if (!product.isHidden) {

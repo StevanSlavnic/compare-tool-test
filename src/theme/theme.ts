@@ -7,14 +7,14 @@ const theme = {
     h5: '12px',
     h6: '10px',
     baseSize: '12px',
-    small: '10px',
+    small: '10px'
   },
   fontWeight: {
     light: '300',
     regular: '400',
     semiBold: '600',
     bold: '700',
-    extraBold: '800',
+    extraBold: '800'
   },
   screenSize: {
     mobileS: '320px',
@@ -23,7 +23,7 @@ const theme = {
     tablet: '768px',
     laptop: '1024px',
     laptopL: '1440px',
-    desktop: '2560px',
+    desktop: '2560px'
   },
   colors: {
     white: '#FFF',
@@ -37,12 +37,13 @@ const theme = {
     slateGray: '#617488',
     burntSienna: '#ED6167',
     orange: '#FF681F',
-    transparent: 'transparent',
+    migelito: '#E9E9E9',
+    transparent: 'transparent'
   },
   shadows: {
     bottom: '0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.09)',
-    right: '0 0 20px rgba(0,0,0,.5), 0 0 21px rgba(0,0,0,.09)',
-  },
+    right: '0 0 20px rgba(0,0,0,.5), 0 0 21px rgba(0,0,0,.09)'
+  }
 }
 
 export default theme
