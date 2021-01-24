@@ -5,7 +5,7 @@ property name and empty spaces
 */
 export const orderProperties = (data: []) => {
   let array: string[] = []
-  data.map((el: object) => {
+  data.map((el: Record<string, unknown>) => {
     const properties = Object.entries(el)
       .sort()
       .reduce(

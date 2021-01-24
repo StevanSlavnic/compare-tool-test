@@ -2,11 +2,11 @@ import React from 'react'
 
 import {
   ProductsListViewWrapper,
-  ProductsListViewProducts,
+  ProductsListViewProducts
 } from './Styled/ProductsListViewStyles'
 
 interface ProductsListViewProps {
-  product: any
+  product: React.ReactNode
   children: JSX.Element
 }
 

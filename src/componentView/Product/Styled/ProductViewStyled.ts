@@ -3,6 +3,14 @@ import styled from 'styled-components'
 export const ProductViewGeneral = styled.div`
   width: 200px;
   padding: 10px;
+  position: relative;
+`
+
+export const ProductViewDelete = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 `
 
 export const ProductViewGeneralImage = styled.div`
@@ -11,6 +19,12 @@ export const ProductViewGeneralImage = styled.div`
   justify-content: center;
   padding: 30px 0;
   min-height: 100px;
+  font-size: ${(props) => props.theme.fontsSize.h5};
+`
+
+export const ProductViewImage = styled.img`
+  width: 100px;
+  height: 100px;
 `
 
 export const ProductViewGeneralName = styled.div`

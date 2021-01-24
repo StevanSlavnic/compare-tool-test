@@ -42,8 +42,8 @@ export const ProductsProvider = (props: ProductsProviderProps) => {
       prevProducts.map((product) =>
         product.id === id
           ? { ...product, isHidden: !product.isHidden }
-          : product,
-      ),
+          : product
+      )
     )
   }
 
@@ -51,12 +51,12 @@ export const ProductsProvider = (props: ProductsProviderProps) => {
     <ProductsContext.Provider
       value={{
         state: {
-          products,
+          products
         },
         actions: {
           setProducts,
-          hideProduct,
-        },
+          hideProduct
+        }
       }}
     >
       {children}

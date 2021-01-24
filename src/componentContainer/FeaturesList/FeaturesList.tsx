@@ -6,7 +6,7 @@ import { FeaturesListView } from 'componentView'
 import {
   FeaturesListRow,
   FeaturesListRowValues,
-  FeaturesListRowImages,
+  FeaturesListRowImages
 } from './Styled/FeaturesListStyled'
 
 interface FeaturesListProps {
@@ -21,7 +21,6 @@ interface FeaturesListProps {
 }
 
 /* Feaures list component is resposible for showing tableData props received from Compare Context */
-
 const FeaturesList = (props: FeaturesListProps) => {
   const { tableData } = props.compareContext.state
 
@@ -52,7 +51,7 @@ const FeaturesList = (props: FeaturesListProps) => {
           })}
         </FeaturesListRow>
       )
-    },
+    }
   )
 
   return <FeaturesListView>{tableRows}</FeaturesListView>

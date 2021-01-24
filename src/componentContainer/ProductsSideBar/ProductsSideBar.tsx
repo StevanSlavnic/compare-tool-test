@@ -14,7 +14,7 @@ interface Product {
 
 interface SideBarProps {
   compareContext: {
-    state: { tableData: any }
+    state: { tableData: [] }
   }
   products: Product[]
 
@@ -25,10 +25,10 @@ interface SideBarProps {
 const ProductsSideBar = (props: SideBarProps) => {
   const {
     compareContext: {
-      state: { tableData },
+      state: { tableData }
     },
     products,
-    hideProduct,
+    hideProduct
   } = props
 
   /* Show/hide product by passing id to hideProduct function in products context */
@@ -66,7 +66,7 @@ const ProductsSideBar = (props: SideBarProps) => {
           <div>{row.name}</div>
         </ProductSideBarLabels>
       )
-    },
+    }
   )
 
   return (

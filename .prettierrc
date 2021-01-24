@@ -15,7 +15,7 @@
   "semi": false,
   "singleQuote": true,
   "quoteProps": "as-needed",
-  "trailingComma": "all",
+  "trailingComma": "none",
   "bracketSpacing": true,
   "arrowParens": "always"
 }

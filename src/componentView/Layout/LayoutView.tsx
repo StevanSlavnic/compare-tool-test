@@ -23,12 +23,12 @@ const LayoutView = (props: LayoutViewProps) => {
   const {
     productsContext: {
       state: { products },
-      actions: { hideProduct },
-    },
+      actions: { hideProduct }
+    }
   } = props
 
   if (!products.length) {
-    return 'Loading...'
+    return <div>Loading...</div>
   }
 
   return (

@@ -14,7 +14,8 @@ module.exports = {
       services: path.resolve(__dirname, './src/services'),
       theme: path.resolve(__dirname, './src/theme'),
       utils: path.resolve(__dirname, './src/utils'),
-    },
+      assets: path.resolve(__dirname, './src/assets')
+    }
   },
   module: {
     rules: [
@@ -25,19 +26,23 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-          },
-        },
+            plugins: ['@babel/plugin-transform-runtime']
+          }
+        }
       },
       {
         test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader?url=false', 'sass-loader'],
+        use: ['style-loader', 'css-loader?url=false', 'sass-loader']
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       },
-    ],
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      }
+    ]
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -46,17 +51,36 @@ module.exports = {
     compress: true,
     hot: true,
     port: 3000,
-    publicPath: '/',
+    publicPath: '/'
   },
   devtool: 'source-map',
   output: {
     filename: '[name].bundle.js',
     publicPath: '/',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build')
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1]
+            return `npm.${packageName.replace('@', '')}`
+          }
+        }
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
-    }),
-  ],
+      template: path.join(__dirname, 'index.html')
+    })
+  ]
 }
