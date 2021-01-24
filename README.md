@@ -13,17 +13,17 @@ Scope - This subject provides an architectural overview of the Compare Products 
 - Open terminal and clone this repo using following command: git clone https://github.com/StevanSlavnic/stevan-slavnic-eriks-digital-frontend-challenge.git
 - Move to the project directory: cd stevan-slavnic-eriks-digital-frontend-challenge.
 - Run **yarn install** in order to install dependencies.
-- After dependencies are installed, run **yarn start** in terminal. App should run at http://localhost:3000.
+- After dependencies are installed, run **yarn start** in terminal. App should run at http://0.0.0.0:3000.
 
 # App overview:
 
 - App is created by using Container - View pattern.
-- All the components are registered and exported from index.ts file for a single access point.
 - Styling of app is done by using Styled Components.
 - Type checking is done by using TypeScript.
 - Statically analysis of code is done by Eslint in combination Prettier.
 - React app with Webpack and Babel
 - App is compatible with all modern browsers, even with IE11.
+- All the components are registered and exported from index.ts file for a single access point.
 
 ## Container components
 
