@@ -25,10 +25,10 @@ interface SideBarProps {
 const ProductsSideBar = (props: SideBarProps) => {
   const {
     compareContext: {
-      state: { tableData }
+      state: { tableData },
     },
     products,
-    hideProduct
+    hideProduct,
   } = props
 
   /* Show/hide product by passing id to hideProduct function in products context */
@@ -56,13 +56,18 @@ const ProductsSideBar = (props: SideBarProps) => {
   })
 
   /* Iterating over tableData prop from Compare context and get product feature label */
-  const productFeatureLabels = tableData.map((row: any, i: number) => {
-    return (
-      <ProductSideBarLabels key={i} className={!row.isEqual ? 'not-equal' : ''}>
-        <div>{row.name}</div>
-      </ProductSideBarLabels>
-    )
-  })
+  const productFeatureLabels = tableData.map(
+    (row: { isEqual: boolean; name: string }, i: number) => {
+      return (
+        <ProductSideBarLabels
+          key={i}
+          className={!row.isEqual ? 'not-equal' : ''}
+        >
+          <div>{row.name}</div>
+        </ProductSideBarLabels>
+      )
+    },
+  )
 
   return (
     <ProductsSideBarView
