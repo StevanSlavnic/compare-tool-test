@@ -25,8 +25,8 @@ interface ProductsListProps {
 const ProductsList = (props: ProductsListProps) => {
   const {
     productsContext: {
-      state: { products }
-    }
+      state: { products },
+    },
   } = props
 
   /* Iterate over products and return products that are not hidden */

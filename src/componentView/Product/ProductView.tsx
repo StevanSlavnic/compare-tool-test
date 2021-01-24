@@ -4,7 +4,7 @@ import {
   ProductViewGeneralImage,
   ProductViewGeneral,
   ProductViewGeneralName,
-  ProductViewGeneralPrice
+  ProductViewGeneralPrice,
 } from './Styled/ProductViewStyled'
 
 interface ProductViewProps {
@@ -19,7 +19,7 @@ interface ProductViewProps {
 
 export const ProductView = (props: ProductViewProps) => {
   const {
-    product: { general }
+    product: { general },
   } = props
 
   return (

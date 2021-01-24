@@ -6,7 +6,7 @@ import { CompareProvider } from 'context'
 import { ProductsSideBar, ProductsList } from 'componentContainer'
 import { HeaderView, FooterView } from 'componentView'
 
-import { LayoutViewWrapper } from './Styled/LayoutViewStyled'
+import { LayoutViewOuter, LayoutViewWrapper } from './Styled/LayoutViewStyled'
 
 interface LayoutViewProps {
   productsContext: {
@@ -23,8 +23,8 @@ const LayoutView = (props: LayoutViewProps) => {
   const {
     productsContext: {
       state: { products },
-      actions: { hideProduct }
-    }
+      actions: { hideProduct },
+    },
   } = props
 
   if (!products.length) {
@@ -33,14 +33,16 @@ const LayoutView = (props: LayoutViewProps) => {
 
   return (
     <>
-      <HeaderView products={products} />
-      <CompareProvider products={products}>
-        <LayoutViewWrapper>
-          <ProductsSideBar products={products} hideProduct={hideProduct} />
-          <ProductsList />
-        </LayoutViewWrapper>
-      </CompareProvider>
-      <FooterView />
+      <LayoutViewOuter>
+        <HeaderView products={products} />
+        <CompareProvider products={products}>
+          <LayoutViewWrapper>
+            <ProductsSideBar products={products} hideProduct={hideProduct} />
+            <ProductsList />
+          </LayoutViewWrapper>
+        </CompareProvider>
+        <FooterView />
+      </LayoutViewOuter>
     </>
   )
 }

@@ -4,7 +4,7 @@ import {
   ProductsSideBarViewWrapper,
   ProductsSideBarViewHeadline,
   ProductsSideBarViewProductsList,
-  ProductsSideBarViewLables
+  ProductsSideBarViewLables,
 } from './Styled/ProductsSideBarViewStyled'
 
 interface ProductsSideBarViewProps {

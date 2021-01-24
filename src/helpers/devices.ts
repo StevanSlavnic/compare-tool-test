@@ -10,5 +10,5 @@ export const devices = {
   laptop: `(min-width: ${theme.screenSize.laptop})`,
   laptopL: `(min-width: ${theme.screenSize.laptopL})`,
   desktop: `(min-width: ${theme.screenSize.desktop})`,
-  desktopL: `(min-width: ${theme.screenSize.desktop})`
+  desktopL: `(min-width: ${theme.screenSize.desktop})`,
 }

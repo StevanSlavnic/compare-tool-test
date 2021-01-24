@@ -1,14 +1,19 @@
+/** @jsxRuntime classic */
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+
 import React from 'react'
+import ReactDom from 'react-dom'
 import { ThemeProvider } from 'styled-components'
 
-import './App.scss'
 import theme from 'theme/theme'
+import './App.scss'
 
 import { ProductsProvider } from 'context'
 
 import { LayoutView } from 'componentView'
 
-function App() {
+const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -20,4 +25,4 @@ function App() {
   )
 }
 
-export default App
+ReactDom.render(<App />, document.getElementById('root') as HTMLElement)

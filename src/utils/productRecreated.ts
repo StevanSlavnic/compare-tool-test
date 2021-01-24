@@ -9,8 +9,8 @@ interface Products {
     productimage: string
     listprice: string
   }
-  features: {}
-  isHidden: Boolean
+  features: Record<string, unknown>
+  isHidden: boolean
 }
 
 /* Function iterate over objects and creates new order of object properties */
@@ -24,10 +24,10 @@ export const productRecreated = (data: DataProps[]) => {
       general: {
         name,
         productimage,
-        listprice
+        listprice,
       },
       features: rest,
-      isHidden: false
+      isHidden: false,
     }
 
     if (product) {
