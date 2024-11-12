@@ -7,7 +7,7 @@ Scope - This subject provides an architectural overview of the Compare Products 
 # How to start app?
 
 - Make sure that you have stable Node.js and npm versions installed.
-- Open terminal and clone this repo using following command: git clone [https://github.com/StevanSlavnic/stevan-slavnic-eriks-digital-frontend-challenge.git](https://github.com/StevanSlavnic/compare-tool-test.git)
+- Open terminal and clone this repo using following command: git clone [https://github.com/StevanSlavnic/compare-tool-test.git](https://github.com/StevanSlavnic/compare-tool-test.git)
 - Move to the project directory: cd stevan-slavnic-eriks-digital-frontend-challenge.
 - Run **yarn install** in order to install dependencies.
 - After dependencies are installed, run **yarn start** in terminal. App should run at http://0.0.0.0:3000.
